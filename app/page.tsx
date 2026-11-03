@@ -1,23 +1,18 @@
 
 import type { Metadata } from "next";
-import { fetchTasks } from "@/lib/tasks";
-import TaskBoard from "./TaskBoard";
+import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "All tasks | Task Board",
-  description: "Every task on your board, in one place.",
-  alternates: {
-    canonical: "https://taskboard.example/tasks",
-  },
+  title: "Home | Task Board",
+  description: "Welcome to your Task Board application.",
 };
 
-export default async function TasksPage() {
-  const tasks = await fetchTasks();
-
-  console.log(
-    "TasksPage is running where? typeof window is",
-    typeof window
+export default function HomePage() {
+  return (
+    <div>
+      <h1>Welcome to Task Board</h1>
+      <p>Manage your tasks easily with our Task Board application.</p>
+      <Link href="/tasks">View All Tasks</Link>
+    </div>
   );
-
-  return <TaskBoard initialTasks={tasks} />;
 }
