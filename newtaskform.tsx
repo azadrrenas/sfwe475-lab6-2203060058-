@@ -52,7 +52,7 @@ function NewTaskForm({ onAddTask }: NewTaskFormProps) {
         <input
           id="dueDate"
           type="date"
-          id="dueDate"
+          
           value={dueDate}
           onChange={(e) => setDueDate(e.target.value)}
         />
